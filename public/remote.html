@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>WebRTC</title>
+    <style>
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.11.1/simplepeer.min.js"
+      integrity="sha512-0f7Ahsuvr+/P2btTY4mZIw9Vl23lS6LY/Y7amdkmUg2dqsUF+cTe4QjWvj/NIBHJoGksOiqndKQuI9yzn2hB0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer type="module" src="./remote/main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <h1>Sender</h1>
+    <video id="myCamera" playsinline autoplay muted></video>
+    <label for="peerSelect">Peer: </label
+    ><select id="peerSelect"></select>
+  </body>
 </html>

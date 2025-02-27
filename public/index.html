@@ -3,11 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webcam</title>
-    <script src="./remote/main.js" defer></script>
+    <title>WebRTC</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.11.1/simplepeer.min.js"
+      integrity="sha512-0f7Ahsuvr+/P2btTY4mZIw9Vl23lS6LY/Y7amdkmUg2dqsUF+cTe4QjWvj/NIBHJoGksOiqndKQuI9yzn2hB0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer type="module" src="./index/main.js"></script>
+    <style>
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
   </head>
   <body>
-    <video id="video" autoplay playsinline></video>
+    <h1>Receiver</h1>
+    <video id="otherCamera" playsinline autoplay muted></video>
   </body>
 </html>
