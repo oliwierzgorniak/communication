@@ -1,5 +1,6 @@
-const $otherCamera = document.getElementById("otherCamera");
+import generateQr from "./generateQr.js";
 
+// https://github.com/devinekask/creative-code-4-s25/blob/main/webrtc/projects/p04-simple-peer/public/receiver.html
 let socket;
 let peer;
 
@@ -13,15 +14,16 @@ const servers = {
 
 const init = async () => {
   initSocket();
-  $otherCamera.addEventListener("click", () => {
-    $otherCamera.play();
-  });
+  // $otherCamera.addEventListener("click", () => {
+  //   $otherCamera.play();
+  // });
 };
 
 const initSocket = () => {
   socket = io.connect(`/`);
   socket.on(`connect`, () => {
     console.log(socket.id);
+    generateQr(socket.id);
   });
   socket.on("signal", async (myId, signal, peerId) => {
     console.log(`Received signal from ${peerId}`);
@@ -33,13 +35,13 @@ const initSocket = () => {
   });
 };
 
-const answerPeerOffer = async (_, __, peerId) => {
+const answerPeerOffer = async (myId, offer, peerId) => {
   peer = new SimplePeer();
   peer.on("signal", (data) => {
     socket.emit("signal", peerId, data);
   });
-  peer.on("stream", (stream) => {
-    $otherCamera.srcObject = stream;
+  peer.on("data", (data) => {
+    console.log(String(data));
   });
 };
 
