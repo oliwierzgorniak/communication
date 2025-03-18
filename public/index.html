@@ -13,22 +13,28 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
     <script defer type="module" src="./index/main.js"></script>
-    <style>
-      video {
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
+    <link rel="stylesheet" href="index/style.css" />
   </head>
   <body>
-    <h1>Receiver</h1>
-
-    <div id="qr"></div>
-    <p>
-      Witaj majowa jutrzenko, Świeć naszej polskiej krainie, Uczcimy ciebie
-      piosenką Przy hulance i przy winie: Witaj maj, trzeci maj, U Polaków błogi
-      raj! Witaj maj, trzeci maj, U Polaków błogi raj!
-    </p>
-    <canvas class="canvas" width="500" height="300"></canvas>
+    <section class="menu">
+      <h1>Karaoke catcher</h1>
+      <h2>Songs</h2>
+      <ul>
+        <li>
+          <button class="menu__song-button">Witaj majowa jutrzenko</button>
+        </li>
+      </ul>
+    </section>
+    <article class="game hidden">
+      <div class="game__qr" id="qr"></div>
+      <ol class="game__text">
+        <li>Witaj majowa jutrzenko, Świeć naszej polskiej krainie,</li>
+        <li>Uczcimy ciebie piosenką Przy hulance i przy winie:</li>
+        <li>Witaj maj, trzeci maj, U Polaków błogi raj!</li>
+        <li>Witaj maj, trzeci maj, U Polaków błogi raj!</li>
+      </ol>
+      <canvas class="game__canvas" width="500" height="300"></canvas>
+      <audio class="game__audio" src="./Witaj_majowa_jutrzenko.ogg"></audio>
+    </article>
   </body>
 </html>

@@ -1,5 +1,6 @@
 import getPeerId from "./getPeerId.js";
 import sendOrientation from "./sendOrientation.js";
+import sendVoice from "./sendVoice.js";
 
 // https://github.com/devinekask/creative-code-4-s25/blob/main/webrtc/projects/p04-simple-peer/public/sender.html
 const $myCamera = document.getElementById("myCamera");

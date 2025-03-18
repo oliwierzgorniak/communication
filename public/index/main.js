@@ -1,5 +1,7 @@
 import generateQr from "./generateQr.js";
 import handleCanvas from "./handleCanvas.js";
+import handleUi from "./handleUi.js";
+import handleVoice from "./handleVoice.js";
 
 // https://github.com/devinekask/creative-code-4-s25/blob/main/webrtc/projects/p04-simple-peer/public/receiver.html
 let socket;
@@ -18,6 +20,7 @@ const init = async () => {
   // $otherCamera.addEventListener("click", () => {
   //   $otherCamera.play();
   // });
+  handleUi();
 };
 
 const initSocket = () => {
@@ -43,6 +46,7 @@ const answerPeerOffer = async (myId, offer, peerId) => {
   });
 
   handleCanvas();
+  handleVoice();
 };
 
 init();

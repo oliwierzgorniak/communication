@@ -5,7 +5,6 @@ const sendOrientation = (peer) => {
         if (response == "granted") {
           // do something with e
           window.addEventListener("deviceorientation", (e) => {
-            console.log(e.beta);
             if (peer) peer.send(e.beta);
           });
         }
