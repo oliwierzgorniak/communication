@@ -1,5 +1,6 @@
 import generateQr from "./generateQr.js";
 import handleCanvas from "./handleCanvas.js";
+import handleText from "./handleText.js";
 import handleUi from "./handleUi.js";
 import handleVoice from "./handleVoice.js";
 
@@ -53,6 +54,7 @@ const answerPeerOffer = async (myId, offer, peerId) => {
   });
   handleCanvas();
   handleVoice();
+  handleText();
 };
 
 init();
