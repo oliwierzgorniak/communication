@@ -19,11 +19,26 @@ const servers = {
 };
 
 const init = async () => {
-  initSocket();
-  const peerId = getPeerId();
-  console.log(peerId);
-  callPeer(peerId);
-  sendOrientation(peer);
+  document.addEventListener("click", () => {
+    DeviceMotionEvent.requestPermission()
+      .then((response) => {
+        if (response == "granted") {
+          // do something with e
+
+          const peerId = getPeerId();
+          console.log(peerId);
+          initSocket();
+          callPeer(peerId);
+
+          console.log(peer);
+          window.addEventListener("deviceorientation", (e) => {
+            if (peer) peer.send(e.beta);
+          });
+        }
+      })
+      .catch(console.error);
+  });
+  // sendOrientation(peer);
   // const constraints = { audio: true, video: { width: 1280, height: 720 } };
   // myStream = await navigator.mediaDevices.getUserMedia(constraints);
   // $myCamera.srcObject = myStream;
@@ -55,3 +70,5 @@ const callPeer = async (peerId) => {
 };
 
 init();
+
+export { callPeer };
