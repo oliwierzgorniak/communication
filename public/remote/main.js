@@ -1,4 +1,5 @@
 import getPeerId from "./getPeerId.js";
+import sendOrientation from "./sendOrientation.js";
 
 // https://github.com/devinekask/creative-code-4-s25/blob/main/webrtc/projects/p04-simple-peer/public/sender.html
 const $myCamera = document.getElementById("myCamera");
@@ -21,6 +22,7 @@ const init = async () => {
   const peerId = getPeerId();
   console.log(peerId);
   callPeer(peerId);
+  sendOrientation(peer);
   // const constraints = { audio: true, video: { width: 1280, height: 720 } };
   // myStream = await navigator.mediaDevices.getUserMedia(constraints);
   // $myCamera.srcObject = myStream;

@@ -1,8 +1,9 @@
 import generateQr from "./generateQr.js";
+import handleCanvas from "./handleCanvas.js";
 
 // https://github.com/devinekask/creative-code-4-s25/blob/main/webrtc/projects/p04-simple-peer/public/receiver.html
 let socket;
-let peer;
+export let peer;
 
 const servers = {
   iceServers: [
@@ -40,9 +41,8 @@ const answerPeerOffer = async (myId, offer, peerId) => {
   peer.on("signal", (data) => {
     socket.emit("signal", peerId, data);
   });
-  peer.on("data", (data) => {
-    console.log(String(data));
-  });
+
+  handleCanvas();
 };
 
 init();
