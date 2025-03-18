@@ -20,7 +20,7 @@ const drawOnCanvas = (ctx) => {
 };
 
 const handleCanvas = () => {
-  const $canvas = document.querySelector(".canvas");
+  const $canvas = document.querySelector(".game__canvas");
   const ctx = $canvas.getContext("2d");
   ctx.fillRect(100, 100, 100, 100);
 

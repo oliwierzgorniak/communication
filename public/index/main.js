@@ -45,6 +45,12 @@ const answerPeerOffer = async (myId, offer, peerId) => {
     socket.emit("signal", peerId, data);
   });
 
+  peer.on("connect", () => {
+    const $connecting = document.querySelector(".connecting");
+    $connecting.classList.add("hidden");
+    const $game = document.querySelector(".game");
+    $game.classList.remove("hidden");
+  });
   handleCanvas();
   handleVoice();
 };
