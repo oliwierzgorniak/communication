@@ -2,10 +2,10 @@ import { peer } from "./main.js";
 import handleNotes, { notes, NOTE_HEIGHT, NOTE_WIDTH } from "./handleNotes.js";
 export const CANVAS_WIDTH = 500;
 export const CANVAS_HEIGHT = 300;
-const CATCHER_WIDTH = 100;
-const CATCHER_HEIGHT = 20;
+export const CATCHER_WIDTH = 100;
+export const CATCHER_HEIGHT = 20;
 
-const catcher = {
+export const catcher = {
   x: CANVAS_WIDTH / 2 - CATCHER_WIDTH / 2,
   y: CANVAS_HEIGHT - CATCHER_HEIGHT,
 };
