@@ -8,6 +8,14 @@ const handleUi = () => {
       $menu.classList.add("hidden");
     });
   });
+
+  const $resultButton = document.querySelector(".result__button");
+  $resultButton.addEventListener("click", () => {
+    const $result = document.querySelector(".result");
+    $result.classList.add("hidden");
+    const $menu = document.querySelector(".menu");
+    $menu.classList.remove("hidden");
+  });
 };
 
 export default handleUi;
