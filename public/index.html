@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="index/style.css" />
   </head>
   <body>
-    <section class="menu">
+    <section class="menu hidden">
       <img class="menu__logo" src="./logo.svg" alt="Singing Catcher logo" />
       <ul>
         <li>
@@ -34,9 +34,9 @@
       <h2 class="connecting__title">Scan with your phone</h2>
       <div class="connecting__qr" id="qr"></div>
     </section>
-    <article class="game hidden">
-      <p class="game__text"></p>
-      <span class="game__score"></span>
+    <article class="game">
+      <p class="game__text">Jakiś tekst</p>
+      <span class="game__score">0</span>
       <canvas class="game__canvas" width="500" height="300"></canvas>
       <audio
         class="game__audio hidden"

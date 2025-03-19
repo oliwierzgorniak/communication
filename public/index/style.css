@@ -38,3 +38,23 @@ body {
   font-size: 1.3rem;
   font-family: "Lora", "Times New Roman", Times, serif;
 }
+
+.game {
+  display: grid;
+  gap: 1em 0.5em;
+  grid-template-columns: 1fr auto;
+}
+
+.game__canvas {
+  border: 0.15em solid black;
+  grid-column: 1/3;
+}
+
+.game__text {
+  margin: 0;
+  font-weight: 500;
+}
+
+.game__score {
+  margin: 0;
+}
