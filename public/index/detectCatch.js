@@ -10,7 +10,11 @@ import updateScore from "./updateScore.js";
 const detectCatch = () => {
   notes.forEach((note, i) => {
     if (note.y + NOTE_HEIGHT * 0.7 < CANVAS_HEIGHT - CATCHER_HEIGHT) return;
-    if (note.x + NOTE_WIDTH > catcher.x && note.x < catcher.x + CATCHER_WIDTH) {
+    if (note.y > CANVAS_HEIGHT) removeNote(i);
+    else if (
+      note.x + NOTE_WIDTH > catcher.x &&
+      note.x < catcher.x + CATCHER_WIDTH
+    ) {
       updateScore(1);
       removeNote(i);
     }
