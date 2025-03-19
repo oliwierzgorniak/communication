@@ -18,7 +18,7 @@ const moveNotes = () => {
 const handleNotes = (interval = 500) => {
   notesIntervalId = setInterval(() => {
     const x = Math.floor(Math.random() * (CANVAS_WIDTH - NOTE_WIDTH));
-    notes.push({ x: x, y: 0 });
+    notes.push({ x: x, y: -NOTE_HEIGHT });
   }, interval);
 
   requestAnimationFrame(moveNotes);
