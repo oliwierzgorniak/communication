@@ -5,11 +5,11 @@ const SONG = [
   },
   {
     text: "Uczcimy ciebie piosenką Przy hulance i przy winie:",
-    time: 5500,
+    time: 6000,
   },
   {
     text: "Witaj maj, trzeci maj, U Polaków błogi raj!",
-    time: 11700,
+    time: 12200,
   },
   {
     text: "Witaj maj, trzeci maj, U Polaków błogi raj!",

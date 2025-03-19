@@ -1,5 +1,3 @@
-import { peer } from "./main.js";
-
 const handleUi = () => {
   const songButtons = document.querySelectorAll(".menu__song-button");
   songButtons.forEach(($button) => {
