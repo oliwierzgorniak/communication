@@ -33,6 +33,12 @@ const handleUi = () => {
     const $menu = document.querySelector(".menu");
     $menu.classList.remove("hidden");
   });
+
+  if (localStorage) {
+    const score = localStorage.getItem("Witaj_majowa_jutrzenko");
+    const $menuScore = document.querySelector(".menu__song-score");
+    $menuScore.textContent = typeof score === "string" ? score : 0;
+  }
 };
 
 export default handleUi;
