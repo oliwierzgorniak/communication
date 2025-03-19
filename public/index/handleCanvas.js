@@ -1,5 +1,6 @@
 import { peer } from "./main.js";
 import handleNotes, { notes, NOTE_HEIGHT, NOTE_WIDTH } from "./handleNotes.js";
+import { drawOnCanvasStop, toggleDrawOnCanvasStop } from "./resetGame.js";
 export const CANVAS_WIDTH = 500;
 export const CANVAS_HEIGHT = 300;
 export const CATCHER_WIDTH = 100;
@@ -16,7 +17,12 @@ const drawOnCanvas = (ctx, $noteImg) => {
   notes.forEach(({ x, y }) => {
     ctx.drawImage($noteImg, x, y, NOTE_WIDTH, NOTE_HEIGHT);
   });
-  requestAnimationFrame(() => drawOnCanvas(ctx, $noteImg));
+
+  if (!drawOnCanvasStop)
+    requestAnimationFrame(() => drawOnCanvas(ctx, $noteImg));
+  else {
+    toggleDrawOnCanvasStop();
+  }
 };
 
 const handleCanvas = () => {

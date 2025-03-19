@@ -7,4 +7,6 @@ const updateScore = (amount) => {
   $score.textContent = score;
 };
 
+export const resetScore = () => (score = 0);
+
 export default updateScore;
