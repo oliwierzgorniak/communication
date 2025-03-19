@@ -19,11 +19,15 @@ const servers = {
 };
 
 const init = async () => {
-  document.addEventListener("click", () => {
+  const $button = document.querySelector(".button");
+  $button.addEventListener("click", () => {
     DeviceMotionEvent.requestPermission()
       .then((response) => {
         if (response == "granted") {
           // do something with e
+          Array.from(document.body.children).forEach(($child) =>
+            $child.classList.add("hidden")
+          );
 
           const peerId = getPeerId();
           console.log(peerId);

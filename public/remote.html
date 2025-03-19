@@ -18,11 +18,22 @@
       referrerpolicy="no-referrer"
     ></script>
     <script defer type="module" src="./remote/main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="remote/style.css" />
   </head>
   <body>
-    <h1>Sender</h1>
-    <video id="myCamera" playsinline autoplay muted></video>
-    <label for="peerSelect">Peer: </label
-    ><select id="peerSelect"></select>
+    <img class="logo" src="./logo.svg" alt="Singing Catcher" />
+    <p class="text">
+      The goal of the game is to catch as many notes as possible. Hold your
+      phone horizontally with the top to your right hand. Balance your phone in
+      order to move the catcher pad on the other screen. If you are a pro you
+      can sing the song while doing this.
+    </p>
+    <button class="button">Start game</button>
   </body>
 </html>
