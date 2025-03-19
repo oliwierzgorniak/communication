@@ -1,7 +1,7 @@
 import detectCatch from "./detectCatch.js";
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from "./handleCanvas.js";
-export const NOTE_WIDTH = 10;
-export const NOTE_HEIGHT = 10;
+export const NOTE_WIDTH = 12;
+export const NOTE_HEIGHT = 30;
 
 export let notes = [];
 

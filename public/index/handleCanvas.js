@@ -3,20 +3,20 @@ import handleNotes, { notes, NOTE_HEIGHT, NOTE_WIDTH } from "./handleNotes.js";
 export const CANVAS_WIDTH = 500;
 export const CANVAS_HEIGHT = 300;
 export const CATCHER_WIDTH = 100;
-export const CATCHER_HEIGHT = 20;
+export const CATCHER_HEIGHT = 10;
 
 export const catcher = {
   x: CANVAS_WIDTH / 2 - CATCHER_WIDTH / 2,
   y: CANVAS_HEIGHT - CATCHER_HEIGHT,
 };
 
-const drawOnCanvas = (ctx) => {
+const drawOnCanvas = (ctx, $noteImg) => {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   ctx.fillRect(catcher.x, catcher.y, CATCHER_WIDTH, CATCHER_HEIGHT);
   notes.forEach(({ x, y }) => {
-    ctx.fillRect(x, y, NOTE_WIDTH, NOTE_HEIGHT);
+    ctx.drawImage($noteImg, x, y, NOTE_WIDTH, NOTE_HEIGHT);
   });
-  requestAnimationFrame(() => drawOnCanvas(ctx));
+  requestAnimationFrame(() => drawOnCanvas(ctx, $noteImg));
 };
 
 const handleCanvas = () => {
@@ -36,7 +36,8 @@ const handleCanvas = () => {
 
   handleNotes();
 
-  requestAnimationFrame(() => drawOnCanvas(ctx));
+  const $noteImg = document.querySelector(".game__note");
+  requestAnimationFrame(() => drawOnCanvas(ctx, $noteImg));
 };
 
 export default handleCanvas;
