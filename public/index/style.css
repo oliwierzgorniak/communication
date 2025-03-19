@@ -10,12 +10,12 @@ body {
   text-align: center;
 }
 
-.connecting__title {
+h2 {
   font-weight: 600;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .menu__logo {
@@ -31,12 +31,15 @@ body {
   margin-top: -0.2em;
 }
 
+button {
+  font-family: "Lora", "Times New Roman", Times, serif;
+}
+
 .menu__song-button {
   background: none;
   border: none;
   text-decoration: underline;
   font-size: 1.3rem;
-  font-family: "Lora", "Times New Roman", Times, serif;
 }
 
 .game {
@@ -57,4 +60,23 @@ body {
 
 .game__score {
   margin: 0;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result__score {
+  margin-bottom: 2.5em;
+  font-size: 1.2rem;
+}
+
+.result__button {
+  border: none;
+  background: none;
+  text-decoration: underline;
+  font-size: 1.1rem;
+  margin-left: -0.8em;
 }
